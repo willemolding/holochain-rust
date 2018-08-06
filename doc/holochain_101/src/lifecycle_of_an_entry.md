@@ -1,1 +1,0 @@
-# Lifecycle of an Entry
