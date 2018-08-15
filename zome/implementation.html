@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>implementing zome API function - holochain_101</title>
+        <title>implementing zome API functions - holochain_101</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.1.</strong> using zome API functions</a></li><li><ol class="section"><li><a href="zome/implementation.html" class="active"><strong aria-hidden="true">3.1.1.</strong> implementing zome API function</a></li></ol></li><li><a href="agent.html"><strong aria-hidden="true">3.2.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">3.3.</strong> Keys</a></li><li><a href="dna.html"><strong aria-hidden="true">3.4.</strong> DNA</a></li><li><a href="source_chain.html"><strong aria-hidden="true">3.5.</strong> Source Chain</a></li><li><ol class="section"><li><a href="pairs.html"><strong aria-hidden="true">3.5.1.</strong> Pairs</a></li></ol></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">3.6.</strong> Distributed Hash Table</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.7.</strong> Lifecycle of an Entry</a></li><li><a href="links.html"><strong aria-hidden="true">3.8.</strong> Links Entries</a></li><li><a href="core_api.html"><strong aria-hidden="true">3.9.</strong> Core API</a></li><li><a href="wasm.html"><strong aria-hidden="true">3.10.</strong> WASM</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.11.</strong> Command Line Tools</a></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.12.</strong> Holochain Across Platforms</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the HC Platform</a></li><li><ol class="section"><li><a href="state_actions.html"><strong aria-hidden="true">5.1.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html"><strong aria-hidden="true">5.1.1.</strong> State actions</a></li></ol></li></ol></li></ol>
+            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.1.</strong> using zome API functions</a></li><li><ol class="section"><li><a href="zome/implementation.html" class="active"><strong aria-hidden="true">3.1.1.</strong> implementing zome API functions</a></li></ol></li><li><a href="zome/callback_functions.html"><strong aria-hidden="true">3.2.</strong> using callback functions</a></li><li><a href="agent.html"><strong aria-hidden="true">3.3.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">3.4.</strong> Keys</a></li><li><a href="dna.html"><strong aria-hidden="true">3.5.</strong> DNA</a></li><li><a href="source_chain.html"><strong aria-hidden="true">3.6.</strong> Source Chain</a></li><li><ol class="section"><li><a href="pairs.html"><strong aria-hidden="true">3.6.1.</strong> Pairs</a></li></ol></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">3.7.</strong> Distributed Hash Table</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.8.</strong> Lifecycle of an Entry</a></li><li><a href="links.html"><strong aria-hidden="true">3.9.</strong> Links Entries</a></li><li><a href="core_api.html"><strong aria-hidden="true">3.10.</strong> Core API</a></li><li><a href="wasm.html"><strong aria-hidden="true">3.11.</strong> WASM</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.12.</strong> Command Line Tools</a></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.13.</strong> Holochain Across Platforms</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the HC Platform</a></li><li><ol class="section"><li><a href="state_actions.html"><strong aria-hidden="true">5.1.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html"><strong aria-hidden="true">5.1.1.</strong> State actions</a></li></ol></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -135,36 +135,34 @@
                     <main>
                         <a class="header" href="zome/implementation.html#zome-implementation" id="zome-implementation"><h1>Zome implementation</h1></a>
 <a class="header" href="zome/implementation.html#zome-api-functions" id="zome-api-functions"><h2>Zome API functions</h2></a>
-<p>Each zome API function is implemented under <code>nucleus::ribosome</code>.</p>
+<p>Each zome API function is implemented under <code>nucleus::ribosome::api</code>.</p>
 <p>There is a fair bit of boilerplate at the moment, sorry!</p>
 <p>To co-ordinate the execution of an API function across Rust and WASM we need to
-implement several items:</p>
+define a few related items.</p>
+<p>Within <code>nucleus::ribosome::api</code>:</p>
 <ul>
-<li>An integer index in the <code>nucleus::ribosome::HcApiFuncIndex</code> enum</li>
-<li>Map the index to the canonical name for the API function under <code>nucleus::ribosome::index_canonical_name</code></li>
-<li>An invocation dispatch in <code>nucleus::ribosome::call</code> under <code>Externals for Runtime</code></li>
+<li>A variant in the <code>ZomeAPIFunction</code> enum</li>
+<li>The same canonical string in <em>both</em> <code>as_str</code> and <code>from_str</code></li>
+<li>A mapping to the API function under <code>as_fn</code></li>
+</ul>
+<p>As a new module under <code>nucleus::ribosome::api</code>:</p>
+<ul>
 <li>A ribosome module implementing the invocation logic as <code>invoke_*</code></li>
+<li>A struct to hold/serialize any input args if needed</li>
+</ul>
+<p>In <code>::action</code>:</p>
+<ul>
 <li>An action if the zome API function has side effects</li>
 </ul>
-<a class="header" href="zome/implementation.html#zome-api-function-index" id="zome-api-function-index"><h3>Zome API function index</h3></a>
+<a class="header" href="zome/implementation.html#zome-api-function-definition" id="zome-api-function-definition"><h3>Zome API function definition</h3></a>
 <p>Simply add the name of the new zome API function to the end of the enum.</p>
+<p>Make sure to add the canonical names carefully. The Rust compiler will guide you
+through the rest if you miss something.</p>
 <p>DO add a doc comment summarising what the zome function does and sketching the
 function signature.</p>
+<p>DO extend the relevant unit tests.</p>
 <p>Do NOT add to the start or middle of the enum as that will renumber the other
 zome functions.</p>
-<a class="header" href="zome/implementation.html#map-the-canonical-name-index" id="map-the-canonical-name-index"><h3>Map the canonical name index</h3></a>
-<p>Add a mapping from the canonical name to the enum variant in <code>nucleus::ribosome::index_canonical_name</code>.</p>
-<p><code>nucleus::ribosome::call</code> will automatically resolve the correct function name
-once the enum mapping is set.</p>
-<a class="header" href="zome/implementation.html#invocation-dispatch" id="invocation-dispatch"><h3>Invocation dispatch</h3></a>
-<p>Add the match arm for the new enum under <code>invoke_index</code>.</p>
-<p>It should look something like this:</p>
-<pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-index if index == HcApiFuncIndex::Foo as usize =&gt; invoke_foo(self, &amp;args),
-#}</code></pre></pre>
-<p>Where <code>Foo</code> and <code>invoke_foo</code> should replace foo with the canonical name.</p>
 <a class="header" href="zome/implementation.html#zome-api-function-ribosome-module" id="zome-api-function-ribosome-module"><h3>Zome API function ribosome module</h3></a>
 <p>Each zome API function should have its own module under <code>nucleus::ribosome::*</code>.</p>
 <p>Implement a public function as <code>invoke_&lt;canonical name&gt;</code>. The function must take
@@ -236,16 +234,14 @@ implement and dispatch an action.</p>
 <p>Actions are covered in more detail in the state chapter.</p>
 <p>In summary, if a new agent action (for example) is needed:</p>
 <ul>
-<li>extend the <code>agent::state::Action</code> enum
+<li>extend the <code>action::Action</code> enum
 <ul>
+<li>this sets the data type, the <code>ActionWrapper</code> provides a unique ID</li>
 <li>use the canonical name if that makes sense</li>
-<li>implement a constructor method in the enum impl</li>
-<li>include a snowflake ID or there will be key collisions in the state history</li>
 </ul>
 </li>
-<li>extend the <code>agent::state::ActionResult</code> enum if the action has a return value</li>
-<li>implement a function dispatch off the new action in <code>agent::state::reduce</code></li>
-<li>implement the dispatched <code>agent::state::do_action_*</code> function</li>
+<li>extend an <code>ActionResult</code> enum if the action has a return value</li>
+<li>implement a reducer for the new action</li>
 </ul>
 
                     </main>
@@ -259,7 +255,7 @@ implement and dispatch an action.</p>
                         
 
                         
-                            <a rel="next" href="agent.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="zome/callback_functions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -277,7 +273,7 @@ implement and dispatch an action.</p>
                 
 
                 
-                    <a href="agent.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="zome/callback_functions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
