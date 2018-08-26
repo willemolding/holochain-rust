@@ -69,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.1.</strong> using zome API functions</a></li><li><ol class="section"><li><a href="zome/implementation.html"><strong aria-hidden="true">3.1.1.</strong> implementing zome API functions</a></li></ol></li><li><a href="zome/callback_functions.html"><strong aria-hidden="true">3.2.</strong> using callback functions</a></li><li><a href="agent.html"><strong aria-hidden="true">3.3.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">3.4.</strong> Keys</a></li><li><a href="dna.html"><strong aria-hidden="true">3.5.</strong> DNA</a></li><li><a href="source_chain.html"><strong aria-hidden="true">3.6.</strong> Source Chain</a></li><li><ol class="section"><li><a href="pairs.html"><strong aria-hidden="true">3.6.1.</strong> Pairs</a></li></ol></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">3.7.</strong> Distributed Hash Table</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.8.</strong> Lifecycle of an Entry</a></li><li><a href="links.html"><strong aria-hidden="true">3.9.</strong> Links Entries</a></li><li><a href="core_api.html"><strong aria-hidden="true">3.10.</strong> Core API</a></li><li><a href="wasm.html"><strong aria-hidden="true">3.11.</strong> WASM</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.12.</strong> Command Line Tools</a></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.13.</strong> Holochain Across Platforms</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the HC Platform</a></li><li><ol class="section"><li><a href="state_actions.html"><strong aria-hidden="true">5.1.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html"><strong aria-hidden="true">5.1.1.</strong> State actions</a></li></ol></li></ol></li></ol>
+            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="zome/api_globals.html"><strong aria-hidden="true">3.1.</strong> using zome API global variables</a></li><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.2.</strong> using zome API functions</a></li><li><ol class="section"><li><a href="zome/implementation.html"><strong aria-hidden="true">3.2.1.</strong> implementing zome API functions</a></li></ol></li><li><a href="zome/callback_functions.html"><strong aria-hidden="true">3.3.</strong> using callback functions</a></li><li><a href="agent.html"><strong aria-hidden="true">3.4.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">3.5.</strong> Keys</a></li><li><a href="dna.html"><strong aria-hidden="true">3.6.</strong> DNA</a></li><li><a href="source_chain.html"><strong aria-hidden="true">3.7.</strong> Source Chain</a></li><li><ol class="section"><li><a href="pairs.html"><strong aria-hidden="true">3.7.1.</strong> Pairs</a></li></ol></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">3.8.</strong> Distributed Hash Table</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.9.</strong> Lifecycle of an Entry</a></li><li><a href="links.html"><strong aria-hidden="true">3.10.</strong> Links Entries</a></li><li><a href="core_api.html"><strong aria-hidden="true">3.11.</strong> Core API</a></li><li><a href="wasm.html"><strong aria-hidden="true">3.12.</strong> WASM</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.13.</strong> Command Line Tools</a></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.14.</strong> Holochain Across Platforms</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the HC Platform</a></li><li><ol class="section"><li><a href="state_actions.html"><strong aria-hidden="true">5.1.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html"><strong aria-hidden="true">5.1.1.</strong> State actions</a></li></ol></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -139,14 +139,46 @@
 <p>This book will explain in depth how Holochain performs its myriad functions, from data validation to data propogation, so that you can get on with what you really want to do,develop an important new application to serve your business, community, or otherwise.</p>
 <a class="header" href="print.html#planning-a-dapp" id="planning-a-dapp"><h1>Planning a dApp</h1></a>
 <a class="header" href="print.html#building-apps" id="building-apps"><h1>Building Apps</h1></a>
+<a class="header" href="print.html#zome-api-constants-and-application-variables" id="zome-api-constants-and-application-variables"><h1>Zome API Constants and Application Variables</h1></a>
+<p>There are two kinds of API values that are available in zome code:</p>
+<ol>
+<li>system-wide global constants</li>
+<li>app-specific global variables</li>
+</ol>
+<a class="header" href="print.html#reference" id="reference"><h2>Reference</h2></a>
+<p>Note: Full reference is available in language-specific API Reference documentation.
+(TODO add links)</p>
+<a class="header" href="print.html#system-wide-global-constants" id="system-wide-global-constants"><h3>System-wide global constants</h3></a>
+<table><thead><tr><th> Name        </th><th align="left"> Purpose           </th></tr></thead><tbody>
+<tr><td> VERSION      </td><td align="left"> Version of the Holochain software running the zome </td></tr>
+<tr><td> HashNotFound      </td><td align="left"> Value returned when a hash provided could not be found. </td></tr>
+<tr><td> Status </td><td align="left"> Enum holding all possible state of an entry. </td></tr>
+<tr><td> GetEntryMask </td><td align="left"> Mask values used for calling the <code>get_entry</code> Zome API Function. </td></tr>
+<tr><td> LinkAction </td><td align="left"> Constants used for calling the <code>link_entries</code> Zome API Function. </td></tr>
+<tr><td> PkgRequest </td><td align="left"> TODO </td></tr>
+<tr><td> ChainOption </td><td align="left"> TODO </td></tr>
+<tr><td> BridgeSide </td><td align="left"> TODO </td></tr>
+<tr><td> SysEntryType </td><td align="left"> Enum holding all possible types of system entries </td></tr>
+<tr><td> bundle_cancel.Reason </td><td align="left"> Enum used as argument for <code>bundle_canceled</code> callback </td></tr>
+<tr><td> bundle_cancel.Response </td><td align="left"> Enum used as return value for <code>bundle_canceled</code> callback </td></tr>
+</tbody></table>
+<a class="header" href="print.html#app-specific-global-variables" id="app-specific-global-variables"><h3>app-specific global variables</h3></a>
+<table><thead><tr><th> Name        </th><th> Purpose           </th></tr></thead><tbody>
+<tr><td> APP_NAME </td><td align="left"> Name of the Holochain app taken from the DNA. </td></tr>
+<tr><td> APP_DNA_HASH </td><td align="left"> The hash of this Holochain's DNA </td></tr>
+<tr><td> APP_AGENT_ID_STR </td><td align="left"> The identity string used to initialize this Holochain with <code>hcadmin init</code>. </td></tr>
+<tr><td> APP_AGENT_KEY_HASH </td><td align="left"> The hash of local agent's public key. </td></tr>
+<tr><td> APP_AGENT_INITIAL_HASH </td><td align="left"> The hash of the first identity entry on the local chain. </td></tr>
+<tr><td> APP_AGENT_LATEST_HASH </td><td align="left"> The hash of the most recent identity entry that has been committed to the local chain. </td></tr>
+</tbody></table>
 <a class="header" href="print.html#zome-api-functions" id="zome-api-functions"><h1>Zome API functions</h1></a>
 <a class="header" href="print.html#overview" id="overview"><h2>Overview</h2></a>
-<p>A zome API function is any Holochain core functionality that is exposed as a
+<p>A Zome API Function is any Holochain core functionality that is exposed as a
 callable function within zome code.</p>
-<p>Compare this to a callback function, which is implemented in the zome language
+<p>Compare this to a Zome Callback Function, which is implemented by the zome code
 and called by Holochain.</p>
-<p>So, zome functions are called by Holochain, which execute logic in the zome
-language and can optionally call zome API functions, which finally return a
+<p>So, zome functions (functions in the zome code) are called by Holochain,
+which can optionally call Zome API Functions, and then finally return a
 value back to Holochain.</p>
 <pre><code>Holochain blocks
   -&gt; calls zome function
@@ -157,7 +189,7 @@ value back to Holochain.</p>
   -&gt; zome function returns some value
   -&gt; Holochain receives final value of zome function
 </code></pre>
-<p>Each zome API function has a canonical name used internally by Holochain.</p>
+<p>Each Zome API Function has a canonical name used internally by Holochain.</p>
 <p>Zome code can be written in any language that compiles to WASM. This means the
 canonical function name and the function name in the zome language might be
 different. The zome language will closely mirror the canonical names, but naming
@@ -170,29 +202,70 @@ arguments that the zome API function was called with. The Rust function connects
 zome logic to Holochain core functionality and often has side effects. The
 return value of the Rust function is passed back to the zome code as the return
 of the zome API function.</p>
-<a class="header" href="print.html#reference" id="reference"><h2>Reference</h2></a>
+<a class="header" href="print.html#reference-1" id="reference-1"><h2>Reference</h2></a>
+<p>Note: Full reference is available in language-specific API Reference documentation.
+(TODO add links)</p>
+<a class="header" href="print.html#property" id="property"><h3>Property</h3></a>
+<p>Canonical name: <code>property</code></p>
+<p>Returns an application property, which are defined by the app developer in the DNA.
+It returns values from the DNA file that you set as properties of your application (e.g. Name, Language, Description, Author, etc.).</p>
+<a class="header" href="print.html#make-hash" id="make-hash"><h3>Make Hash</h3></a>
+<p>Canonical name: <code>make_hash</code></p>
+<p>TODO</p>
 <a class="header" href="print.html#debug" id="debug"><h3>Debug</h3></a>
 <p>Canonical name: <code>debug</code></p>
-<p>Debug sends the passed arguments to current log that was given to the instance and returns <code>None</code>.</p>
-<a class="header" href="print.html#commit" id="commit"><h3>Commit</h3></a>
-<p>Canonical name: <code>commit</code></p>
-<p>Given an entry type and content, commits to the local source chain and returns
-the entry hash if successful. The hash is the hash of the entry associated with
-this commit in the source chain.</p>
-<a class="header" href="print.html#get" id="get"><h3>Get</h3></a>
-<p>Canonical name: <code>get</code></p>
-<p>Given an entry hash, gets some pair from the DHT if that entry content exists.</p>
-<p>Performs lookups from (in order):</p>
+<p>Debug sends the passed arguments to the log that was given to the Holochain instance and returns <code>None</code>.</p>
+<a class="header" href="print.html#call" id="call"><h3>Call</h3></a>
+<p>Canonical name: <code>call</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#sign" id="sign"><h3>Sign</h3></a>
+<p>Canonical name: <code>sign</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#verify-signature" id="verify-signature"><h3>Verify Signature</h3></a>
+<p>Canonical name: <code>verify_signature</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#commit-entry" id="commit-entry"><h3>Commit Entry</h3></a>
+<p>Canonical name: <code>commit_entry</code></p>
+<p>Given an entry type and content, commits an entry to the local source chain.
+On success, returns the hash of the entry.</p>
+<a class="header" href="print.html#update-entry" id="update-entry"><h3>Update Entry</h3></a>
+<p>Canonical name: <code>update_entry</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#update-agent" id="update-agent"><h3>Update Agent</h3></a>
+<p>Canonical name: <code>update_agent</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#remove-entry" id="remove-entry"><h3>Remove Entry</h3></a>
+<p>Canonical name: <code>remove_entry</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#get-entry" id="get-entry"><h3>Get Entry</h3></a>
+<p>Canonical name: <code>get_entry</code></p>
+<p>Given an entry hash, returns the entry from the DHT if that entry exists.</p>
+<p>Entry lookup is done in the following order:</p>
 <ul>
 <li>The local source chain</li>
 <li>The local hash table</li>
 <li>The distributed hash table</li>
 </ul>
-<p>Note that multiple pairs can have the same entry hash, both locally and on the
-DHT across the network.</p>
-<p>Note also that two entries with the same content but different types resolve to
-the same entry hash. The entry hash is <em>only</em> unique to the entry content.</p>
-<p>Use the header hash to lookup a specific pair.</p>
+<p>Caller can request additional metadata on the entry such as type or sources
+(hashes of the agents that committed the entry).</p>
+<a class="header" href="print.html#get-links" id="get-links"><h3>Get Links</h3></a>
+<p>Canonical name: <code>get_links</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#remove-entry-1" id="remove-entry-1"><h3>Remove Entry</h3></a>
+<p>Canonical name: <code>remove_entry</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#query" id="query"><h3>Query</h3></a>
+<p>Canonical name: <code>query</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#send" id="send"><h3>Send</h3></a>
+<p>Canonical name: <code>send</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#start-bundle" id="start-bundle"><h3>Start Bundle</h3></a>
+<p>Canonical name: <code>start_bundle</code></p>
+<p>TODO</p>
+<a class="header" href="print.html#close-bundle" id="close-bundle"><h3>Close Bundle</h3></a>
+<p>Canonical name: <code>close_bundle</code></p>
+<p>TODO</p>
 <a class="header" href="print.html#zome-implementation" id="zome-implementation"><h1>Zome implementation</h1></a>
 <a class="header" href="print.html#zome-api-functions-1" id="zome-api-functions-1"><h2>Zome API functions</h2></a>
 <p>Each zome API function is implemented under <code>nucleus::ribosome::api</code>.</p>
@@ -323,7 +396,7 @@ call it automatically during standard internal workflows.</p>
 <p>Return <code>true</code> or an empty string from the zome function to <code>Pass</code>.</p>
 <p>Return <code>false</code> or a non-empty string from the zome function to <code>Fail</code>. The
 string will be used as the <code>Fail</code> reason.</p>
-<a class="header" href="print.html#reference-1" id="reference-1"><h2>Reference</h2></a>
+<a class="header" href="print.html#reference-2" id="reference-2"><h2>Reference</h2></a>
 <a class="header" href="print.html#genesis" id="genesis"><h3>Genesis</h3></a>
 <p>Canonical name: <code>genesis</code>
 Parameters: none</p>
@@ -361,7 +434,7 @@ type_next // link to the most recent header of the same type, None is valid only
 signature // agents crptographic signature</p>
 <a class="header" href="print.html#distributed-hash-table" id="distributed-hash-table"><h1>Distributed Hash Table</h1></a>
 <a class="header" href="print.html#lifecycle-of-an-entry" id="lifecycle-of-an-entry"><h1>Lifecycle of an Entry</h1></a>
-<a class="header" href="print.html#commit-1" id="commit-1"><h2>Commit</h2></a>
+<a class="header" href="print.html#commit" id="commit"><h2>Commit</h2></a>
 <pre><code>New entry
 Validate commit
 Commit to source chain
