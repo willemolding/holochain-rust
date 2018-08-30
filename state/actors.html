@@ -3,13 +3,13 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>DNA - holochain_101</title>
+        <title>State actors - holochain_101</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <base href="">
+        <base href="../">
 
         <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><ol class="section"><li><a href="overview.html"><strong aria-hidden="true">1.1.</strong> Overview</a></li><li><a href="how_to_contribute.html"><strong aria-hidden="true">1.2.</strong> How to contribute</a></li></ol></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="zome/api_globals.html"><strong aria-hidden="true">3.1.</strong> Using Zome API global variables</a></li><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.2.</strong> Using Zome API functions</a></li><li><a href="zome/callback_functions.html"><strong aria-hidden="true">3.3.</strong> Using callback functions</a></li><li><a href="agent.html"><strong aria-hidden="true">3.4.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">3.5.</strong> Keys</a></li><li><a href="dna.html" class="active"><strong aria-hidden="true">3.6.</strong> DNA</a></li><li><a href="zome.html"><strong aria-hidden="true">3.7.</strong> Zome</a></li><li><a href="source_chain.html"><strong aria-hidden="true">3.8.</strong> Source Chain</a></li><li><ol class="section"><li><a href="pairs.html"><strong aria-hidden="true">3.8.1.</strong> Pairs</a></li></ol></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">3.9.</strong> Distributed Hash Table</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.10.</strong> Lifecycle of an Entry</a></li><li><a href="links.html"><strong aria-hidden="true">3.11.</strong> Links Entries</a></li><li><a href="core_api.html"><strong aria-hidden="true">3.12.</strong> Core API</a></li><li><a href="wasm.html"><strong aria-hidden="true">3.13.</strong> WASM</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.14.</strong> Command Line Tools</a></li><li><a href="embedding_hc_apps.html"><strong aria-hidden="true">3.15.</strong> Embedding Holochain Apps</a></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.16.</strong> Holochain Across Platforms</a></li><li><a href="alpha_migrate.html"><strong aria-hidden="true">3.17.</strong> Upgrading to Alpha 2</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the Holochain Platform</a></li><li><ol class="section"><li><a href="writing_development_kit.html"><strong aria-hidden="true">5.1.</strong> Writing a Development Kit (HDK)</a></li><li><a href="zome/implementation.html"><strong aria-hidden="true">5.2.</strong> Implementing Zome API functions</a></li><li><a href="state_actions.html"><strong aria-hidden="true">5.3.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html"><strong aria-hidden="true">5.3.1.</strong> State actions</a></li></ol></li><li><a href="state/actors.html"><strong aria-hidden="true">5.4.</strong> State actors</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><ol class="section"><li><a href="overview.html"><strong aria-hidden="true">1.1.</strong> Overview</a></li><li><a href="how_to_contribute.html"><strong aria-hidden="true">1.2.</strong> How to contribute</a></li></ol></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="zome/api_globals.html"><strong aria-hidden="true">3.1.</strong> Using Zome API global variables</a></li><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.2.</strong> Using Zome API functions</a></li><li><a href="zome/callback_functions.html"><strong aria-hidden="true">3.3.</strong> Using callback functions</a></li><li><a href="agent.html"><strong aria-hidden="true">3.4.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">3.5.</strong> Keys</a></li><li><a href="dna.html"><strong aria-hidden="true">3.6.</strong> DNA</a></li><li><a href="zome.html"><strong aria-hidden="true">3.7.</strong> Zome</a></li><li><a href="source_chain.html"><strong aria-hidden="true">3.8.</strong> Source Chain</a></li><li><ol class="section"><li><a href="pairs.html"><strong aria-hidden="true">3.8.1.</strong> Pairs</a></li></ol></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">3.9.</strong> Distributed Hash Table</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.10.</strong> Lifecycle of an Entry</a></li><li><a href="links.html"><strong aria-hidden="true">3.11.</strong> Links Entries</a></li><li><a href="core_api.html"><strong aria-hidden="true">3.12.</strong> Core API</a></li><li><a href="wasm.html"><strong aria-hidden="true">3.13.</strong> WASM</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.14.</strong> Command Line Tools</a></li><li><a href="embedding_hc_apps.html"><strong aria-hidden="true">3.15.</strong> Embedding Holochain Apps</a></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.16.</strong> Holochain Across Platforms</a></li><li><a href="alpha_migrate.html"><strong aria-hidden="true">3.17.</strong> Upgrading to Alpha 2</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the Holochain Platform</a></li><li><ol class="section"><li><a href="writing_development_kit.html"><strong aria-hidden="true">5.1.</strong> Writing a Development Kit (HDK)</a></li><li><a href="zome/implementation.html"><strong aria-hidden="true">5.2.</strong> Implementing Zome API functions</a></li><li><a href="state_actions.html"><strong aria-hidden="true">5.3.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html"><strong aria-hidden="true">5.3.1.</strong> State actions</a></li></ol></li><li><a href="state/actors.html" class="active"><strong aria-hidden="true">5.4.</strong> State actors</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -133,22 +133,64 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="dna.html#dna" id="dna"><h1>DNA</h1></a>
+                        <a class="header" href="state/actors.html#internal-actors" id="internal-actors"><h1>Internal actors</h1></a>
+<p>Actors are discussed in two context:</p>
+<ul>
+<li>Each Holochain agent as an actor in a networking context</li>
+<li>Riker actors as an implemenation detail in the Holochain core lib</li>
+</ul>
+<p>This article is about the latter.</p>
+<a class="header" href="state/actors.html#actor-model" id="actor-model"><h2>Actor model</h2></a>
+<p>The <a href="https://en.wikipedia.org/wiki/Actor_model">actor model</a> is a relatively safe approach to co-ordinating concurrency.</p>
+<p>At a high level:</p>
+<ul>
+<li>An actor is the &quot;primitive&quot;, like objects are the primitive of the OO paradigm</li>
+<li>Actors are stateful but this state is never exposed to the rest of the system</li>
+<li>Actors manage their internal state</li>
+<li>Actors maintain a message queue or &quot;inbox&quot;</li>
+<li>Messages can be received concurrently but must be processed sequentially in FIFO order</li>
+<li>The messages have a preset format</li>
+<li>Actors update their internal state in response to messages</li>
+<li>Actors can send messages to each other</li>
+<li>Messages are always processed at most once</li>
+<li>Actors can &quot;supervise&quot; each other to create a fault tolerent system</li>
+<li>A supervisor can restart or stop a failed actor, or escalate the decision to another supervisor</li>
+</ul>
+<p>The guarantees provided by the message queue allow actors to use stateful logic
+that would not be safe otherwise in a concurrent context.</p>
+<p>For example, we can implement logic that reads/writes to the file system without
+locks or other co-ordination. Then put an actor in front of this logic and only
+interact with the file system through the relevant actor.</p>
+<a class="header" href="state/actors.html#riker" id="riker"><h2>Riker</h2></a>
+<p><a href="http://riker.rs/">Riker</a> is an actor library for Rust.</p>
+<p>The actor implementation in Riker has a few key concepts:</p>
+<ul>
+<li>protocol: a set of valid messages that can be sent (e.g. an enum)</li>
+<li>actor system: manages and co-ordinates all actors</li>
+<li>actor: anything implementing the <code>Actor</code> trait to create new actor instances and handle receiving messages</li>
+<li>actor instance: an instance of the actor struct that has internal state and is tracked by the actor system</li>
+<li>actor ref(erence): an ActorRef<MyProtocol> that can tell messages to the actor instance it references via. the actor system</li>
+</ul>
+<p>The actor reference is a &quot;killer feature&quot; of Riker for us.</p>
+<ul>
+<li>known size at compile, safe as properties of structs/enums</li>
+<li>small size, almost free to clone</li>
+<li>safe to share across threads and copy, no Arc reference counting, no locks, etc.</li>
+<li>safe to drop (the actor system maintains a URI style lookup)</li>
+<li>known type, no onerous generic trait handling</li>
+<li>no onerous lifetimes</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="keys.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="state/actions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="zome.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -158,15 +200,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="keys.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="state/actions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a href="zome.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
