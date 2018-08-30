@@ -3,13 +3,13 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Using callback functions - holochain_101</title>
+        <title>Upgrading to Alpha 2 - holochain_101</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <base href="../">
+        <base href="">
 
         <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><ol class="section"><li><a href="overview.html"><strong aria-hidden="true">1.1.</strong> Overview</a></li><li><a href="how_to_contribute.html"><strong aria-hidden="true">1.2.</strong> How to contribute</a></li></ol></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="zome/api_globals.html"><strong aria-hidden="true">3.1.</strong> Using Zome API global variables</a></li><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.2.</strong> Using Zome API functions</a></li><li><a href="zome/callback_functions.html" class="active"><strong aria-hidden="true">3.3.</strong> Using callback functions</a></li><li><a href="agent.html"><strong aria-hidden="true">3.4.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">3.5.</strong> Keys</a></li><li><a href="dna.html"><strong aria-hidden="true">3.6.</strong> DNA</a></li><li><a href="zome.html"><strong aria-hidden="true">3.7.</strong> Zome</a></li><li><a href="source_chain.html"><strong aria-hidden="true">3.8.</strong> Source Chain</a></li><li><ol class="section"><li><a href="pairs.html"><strong aria-hidden="true">3.8.1.</strong> Pairs</a></li></ol></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">3.9.</strong> Distributed Hash Table</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.10.</strong> Lifecycle of an Entry</a></li><li><a href="links.html"><strong aria-hidden="true">3.11.</strong> Links Entries</a></li><li><a href="core_api.html"><strong aria-hidden="true">3.12.</strong> Core API</a></li><li><a href="wasm.html"><strong aria-hidden="true">3.13.</strong> WASM</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.14.</strong> Command Line Tools</a></li><li><a href="embedding_hc_apps.html"><strong aria-hidden="true">3.15.</strong> Embedding Holochain Apps</a></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.16.</strong> Holochain Across Platforms</a></li><li><a href="alpha_migrate.html"><strong aria-hidden="true">3.17.</strong> Upgrading to Alpha 2</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the Holochain Platform</a></li><li><ol class="section"><li><a href="writing_development_kit.html"><strong aria-hidden="true">5.1.</strong> Writing a Development Kit (HDK)</a></li><li><a href="zome/implementation.html"><strong aria-hidden="true">5.2.</strong> Implementing Zome API functions</a></li><li><a href="state_actions.html"><strong aria-hidden="true">5.3.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html"><strong aria-hidden="true">5.3.1.</strong> State actions</a></li></ol></li></ol></li></ol>
+            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><ol class="section"><li><a href="overview.html"><strong aria-hidden="true">1.1.</strong> Overview</a></li><li><a href="how_to_contribute.html"><strong aria-hidden="true">1.2.</strong> How to contribute</a></li></ol></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="zome/api_globals.html"><strong aria-hidden="true">3.1.</strong> Using Zome API global variables</a></li><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.2.</strong> Using Zome API functions</a></li><li><a href="zome/callback_functions.html"><strong aria-hidden="true">3.3.</strong> Using callback functions</a></li><li><a href="agent.html"><strong aria-hidden="true">3.4.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">3.5.</strong> Keys</a></li><li><a href="dna.html"><strong aria-hidden="true">3.6.</strong> DNA</a></li><li><a href="zome.html"><strong aria-hidden="true">3.7.</strong> Zome</a></li><li><a href="source_chain.html"><strong aria-hidden="true">3.8.</strong> Source Chain</a></li><li><ol class="section"><li><a href="pairs.html"><strong aria-hidden="true">3.8.1.</strong> Pairs</a></li></ol></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">3.9.</strong> Distributed Hash Table</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.10.</strong> Lifecycle of an Entry</a></li><li><a href="links.html"><strong aria-hidden="true">3.11.</strong> Links Entries</a></li><li><a href="core_api.html"><strong aria-hidden="true">3.12.</strong> Core API</a></li><li><a href="wasm.html"><strong aria-hidden="true">3.13.</strong> WASM</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.14.</strong> Command Line Tools</a></li><li><a href="embedding_hc_apps.html"><strong aria-hidden="true">3.15.</strong> Embedding Holochain Apps</a></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.16.</strong> Holochain Across Platforms</a></li><li><a href="alpha_migrate.html" class="active"><strong aria-hidden="true">3.17.</strong> Upgrading to Alpha 2</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the Holochain Platform</a></li><li><ol class="section"><li><a href="writing_development_kit.html"><strong aria-hidden="true">5.1.</strong> Writing a Development Kit (HDK)</a></li><li><a href="zome/implementation.html"><strong aria-hidden="true">5.2.</strong> Implementing Zome API functions</a></li><li><a href="state_actions.html"><strong aria-hidden="true">5.3.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html"><strong aria-hidden="true">5.3.1.</strong> State actions</a></li></ol></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -133,58 +133,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="zome/callback_functions.html#callback-functions" id="callback-functions"><h1>Callback functions</h1></a>
-<a class="header" href="zome/callback_functions.html#overview" id="overview"><h2>Overview</h2></a>
-<p>A callback function is implemented in the zome language and called by Holochain.</p>
-<p>Contrast this to a zome API function that is implemented by Holochain and called
-by the zome.</p>
-<p>Callback functions are passed some parameters and expected to return one of
-three possible <code>CallbackParams</code> variants:</p>
-<ul>
-<li><code>Pass</code>: The callback function has executed/validated successfully</li>
-<li><code>NotImplemented</code>: The callback function was not found in the current zome</li>
-<li><code>Fail(String)</code>: The callback function failed for the given reason</li>
-</ul>
-<p>As per Zome API functions, the names of the callback functions may be slightly
-different depending on the language. The canonical name follows Rust naming
-conventions but other languages may vary these (e.g. camel casing).</p>
-<p>To implement a callback function in a zome simply define it and Holochain will
-call it automatically during standard internal workflows.</p>
-<p>Return <code>true</code> or an empty string from the zome function to <code>Pass</code>.</p>
-<p>Return <code>false</code> or a non-empty string from the zome function to <code>Fail</code>. The
-string will be used as the <code>Fail</code> reason.</p>
-<a class="header" href="zome/callback_functions.html#reference" id="reference"><h2>Reference</h2></a>
-<a class="header" href="zome/callback_functions.html#genesis" id="genesis"><h3>Genesis</h3></a>
-<p>Canonical name: <code>genesis</code>
-Parameters: none</p>
-<p>Called the first time a dApp initializes.</p>
-<ul>
-<li><code>Pass</code>: the dApp will initialize</li>
-<li><code>NotImplemented</code>: the dApp will initialize</li>
-<li><code>Fail</code> (any reason): the dApp will NOT initialize</li>
-</ul>
-<a class="header" href="zome/callback_functions.html#validatecommit" id="validatecommit"><h3>ValidateCommit</h3></a>
-<p>Canonical name: <code>validate_commit</code>
-Parameters: The candidate entry to be committed</p>
-<p>Called internally by the <code>commit</code> Zome API function.</p>
-<ul>
-<li><code>Pass</code>: the entry will be committed</li>
-<li><code>NotImplemented</code>: the entry will be committed</li>
-<li><code>Fail</code> (any reason): the entry will NOT be committed and <code>commit</code> will return a <code>HcApiReturnCode::ErrorCallbackResult</code> error code.</li>
-</ul>
+                        <a class="header" href="alpha_migrate.html#updating-to-alpha-2" id="updating-to-alpha-2"><h1>Updating to Alpha 2</h1></a>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="zome/api_functions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="holochain_across_platforms.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="agent.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="live_hc_apps.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -196,13 +158,13 @@ Parameters: The candidate entry to be committed</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="zome/api_functions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="holochain_across_platforms.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="agent.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="live_hc_apps.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
