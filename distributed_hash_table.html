@@ -143,7 +143,7 @@ internally blocking on an <code>ask</code> from riker patterns.</p>
 <p>The actor ref methods implementing <code>HashTable</code> sends messages to itself.</p>
 <p>Calling <code>table_actor_ref.commit(entry)</code> looks like this:</p>
 <ol start="0">
-<li>the actor ref constructs a <code>HashTableProtocol::Commit</code> message including the entry</li>
+<li>the actor ref constructs a <code>Protocol::PutPair</code> message including the entry</li>
 <li>the actor ref calls its own <code>ask</code> method, which builds a future using riker's <code>ask</code></li>
 <li>the actor ref blocks on its internal future</li>
 <li>the referenced actor receives the <code>Commit</code> message and matches/destructures this into the entry</li>
