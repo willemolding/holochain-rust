@@ -129,3 +129,43 @@ macro_rules! validations {
         )+
     );
 }
+
+#[macro_export]
+macro_rules! zome_callback {
+    ( 
+        (genesis) {
+            $main_block:expr
+        }
+    ) => {
+        #[no_mangle]
+        pub extern "C" fn genesis(encoded_allocation_of_input: u32) -> u32 {
+
+            // Macro'd function body
+            fn execute() -> Result<(), String> {
+                $main_block
+            }
+
+            let result = execute(input);
+
+            match result {
+                Ok(()) => 0,
+                Err(fail_string) => ::hdk::serialize_wasm_output(fail_string),
+            }
+        }
+    };
+}
+
+// should produce the following
+
+// pub extern "C" fn genesis(encoded_allocation_of_input: u32) -> u32 {
+//     fn execute() -> Result<(), String> {
+//         $main_block
+//     }
+
+//     let result = execute();
+
+//     match result {
+//         Ok(()) => 0,
+//         Err(fail_string) => ::hdk::serialize_wasm_output(fail_string),
+//     }
+// }
