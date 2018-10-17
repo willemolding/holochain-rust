@@ -1,4 +1,4 @@
-use error::HolochainError;
+use holochain_core_types::error::HolochainError;
 use state::State;
 
 /// trait that defines the persistence functionality that holochain_core requires
@@ -34,9 +34,6 @@ impl SimplePersister {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use action::{tests::test_action_wrapper_commit, ActionWrapper};
-    use instance::tests::test_context;
-    use std::sync::mpsc::channel;
 
     #[test]
     fn can_instantiate() {
@@ -45,25 +42,5 @@ mod tests {
         assert_eq!(store.load(), Ok(None));
     }
 
-    #[test]
-    fn can_roundtrip() {
-        let mut store = SimplePersister::new();
-
-        let state = State::new();
-
-        let action_wrapper = test_action_wrapper_commit();
-
-        let (sender, _receiver) = channel::<ActionWrapper>();
-        let (tx_observer, _observer) = channel::<::instance::Observer>();
-        let new_state = state.reduce(
-            test_context("jane"),
-            action_wrapper.clone(),
-            &sender,
-            &tx_observer,
-        );
-
-        store.save(new_state.clone());
-
-        assert_eq!(store.load(), Ok(Some(new_state)));
-    }
+    // TODO write a persister.save() test
 }

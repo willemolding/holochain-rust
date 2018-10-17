@@ -1,5 +1,8 @@
+//! The virtual machine that runs DNA written in WASM
+
 pub mod api;
 pub mod callback;
+pub mod memory;
 
 use holochain_dna::zome::capabilities::ReservedCapabilityNames;
 
