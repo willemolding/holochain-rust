@@ -131,9 +131,9 @@ macro_rules! validations {
 }
 
 #[macro_export]
-macro_rules! zome_callback {
+macro_rules! zome_callbacks {
     ( 
-        (genesis) {
+        genesis: {
             $main_block:expr
         }
     ) => {
@@ -145,7 +145,7 @@ macro_rules! zome_callback {
                 $main_block
             }
 
-            let result = execute(input);
+            let result = execute();
 
             match result {
                 Ok(()) => 0,

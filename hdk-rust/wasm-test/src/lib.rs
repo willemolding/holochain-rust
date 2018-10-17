@@ -139,3 +139,10 @@ validations! {
         }
     }
 }
+
+
+zome_callbacks! {
+    genesis: {
+        Ok(())
+    }
+}
